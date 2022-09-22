@@ -1,0 +1,177 @@
+.head{ /* mega section layout - the first line */
+    display: flex;
+    height: 30px;
+    justify-content: center;
+}
+.homeLeft{ /* home button */
+    flex: none;
+    width: calc(100% - 40px);
+    font-size: 20px;
+    padding-left: 10px;
+}
+.homeRight{ /* item list - pc */
+    flex: none;
+    width: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+.homeRight-mobile{ /* item list - mobile */
+    display: none;
+}
+.item{ /* item */
+    flex: none;
+    width: 80px;
+    font-size: 20px;
+    text-align: center;
+}
+.welcome{ /* mega section layout - welcome to MyHome pic */
+    text-align: center;
+    line-height: 300px;
+    height: 300px;
+    background-color: #FF9D6F;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.main-upper{ /* macro section layout - main area */
+    display: flex;
+    margin: auto;
+    height: 50px;
+    width: 1200px;
+    margin-bottom: 10px;
+}
+.main-upper-sec{ /* middle section layout - main upper area */
+    width: calc(50% - 5px);
+    display: flex;
+    background-color: #FFDCB9;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.upper-pic{
+    flex: none;
+    vertical-align: middle;
+    line-height: 50px;
+    width: 80px;
+}
+.upper-word{ /* main upper area - title setting */
+    flex: none;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: 20px;
+    padding-left: 10px;
+}
+.main-lower{ /* middle section layout - main lower area */
+    display: flex;
+    margin: auto;
+    width: 1200px;
+    margin-bottom: 10px;
+}
+.lower-set{ /* micro section layout - main lower area */
+    width: calc(25% - 10px);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.lower-word{ /* main lower area - title setting */
+    text-align: center;
+    font-size: 20px;
+    background-color: #FFDCB9;
+    margin-top: -5px;
+}
+img{
+    width: 100%; 
+    max-height: 100%;
+    object-fit: cover;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 1200px){
+    .main-upper{ /* macro section layout - main area */
+        display: flex;
+        margin: auto;
+        height: 50px;
+        width: calc(90% - 5px);
+        margin-bottom: 10px;
+    }
+    .main-upper-sec{ /* middle section layout - main upper area */
+        width: calc(50% - 5px);
+        display: flex;
+        background-color: #FFDCB9;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .upper-word{ /* main upper area - title setting */
+        flex: none;
+        line-height: 50px;
+        font-size: 20px;
+    }
+    .main-lower{ /* middle section layout - main lower area */
+        flex-wrap: wrap;
+        margin: auto;
+        width: calc(90% - 5px);
+    }
+    .lower-set{ /* micro section layout - main lower area */
+        flex: none;
+        width: calc(50% - 10px);
+        align-items: center;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 600px){
+    .welcome{ /* mega section layout - welcome to MyHome pic */
+        text-align: center;
+        line-height: 300px;
+        height: 300px;
+        background-color: #FF9D6F;
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .homeRight{ /* item list - pc */
+        display: none;
+    }
+    .homeRight-mobile{ /* item list - mobile */
+        width: 30px;
+        display: block;
+        justify-content: flex-end;
+    }
+    .main-upper{ /* macro section layout - main area */
+        flex-wrap: wrap;
+        margin: auto;
+        width: 90%;
+        height: 120px;
+    }
+    .main-upper-sec{ /* middle section layout - main upper area */
+        width: 100%;
+        display: flex;
+        background-color: #FFDCB9;
+        margin-bottom: 10px;
+    }
+    .upper-pic{
+        flex: none;
+        vertical-align: middle;
+        height: 50px;
+    }
+    .upper-word{ /* main upper area - title setting */
+        flex: none;
+        vertical-align: middle;
+        height: 50px;
+        font-size: 20px;
+        padding-left: 10px;
+    }
+    .main-lower{ /* middle section layout - main lower area */
+        flex-wrap: wrap;
+        margin: auto;
+        width: 90%;
+        margin-bottom: 10px;
+    }
+    .lower-set{ /* micro section layout - main lower area */
+        flex: none;
+        width: calc(100% - 10px);
+        align-items: center;
+        margin-bottom: 10px;
+    }
+}
