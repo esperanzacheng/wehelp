@@ -31,8 +31,6 @@
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 10px;
-    margin-left: -10%;
-    margin-right: -10%;
 }
 .main-upper{ /* macro section layout - main area */
     display: flex;
@@ -83,6 +81,10 @@ img{
     max-height: 100%;
     object-fit: cover;
 }
+body{
+    margin: 0;
+    padding: 0;
+}
 
 @media (max-width: 1200px){
     .main-upper{ /* macro section layout - main area */
@@ -126,8 +128,6 @@ img{
         font-size: 28px;
         font-weight: bold;
         margin-bottom: 10px;
-        margin-left: -10%;
-        margin-right: -10%;
     }
     .homeRight{ /* item list - pc */
         display: none;
