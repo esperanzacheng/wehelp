@@ -12,7 +12,7 @@ INSERT INTO member VALUES ('002', 'Bobby', 'test', 'test', '200', '2022-07-01'),
 
 SELECT * FROM member;
 
-![cmd-1.png](attachment:cmd-1.png)
+![GITHUB](files/cmd-1.png)
 
 mysql> SELECT * FROM member ORDER BY time DESC;
 
