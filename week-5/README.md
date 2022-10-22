@@ -16,37 +16,37 @@ SELECT * FROM member;
 
 mysql> SELECT * FROM member ORDER BY time DESC;
 
-![cmd-2.png](attachment:cmd-2.png)
+![GITHUB](files/cmd-2.png)
 
 mysql> SELECT * FROM member ORDER BY time DESC LIMIT 1, 3;
 
-![cmd-3.png](attachment:cmd-3.png)
+![GITHUB](files/cmd-3.png)
 
 mysql> SELECT * FROM member where username = 'test';
 
-![cmd-4-2.png](attachment:cmd-4-2.png)
+![GITHUB](files/cmd-4.png)
 
 mysql> SELECT * FROM member where username = 'test' and password = 'test';
 
-![cmd-5.png](attachment:cmd-5.png)
+![GITHUB](files/cmd-5.png)
 
 mysql> UPDATE member SET name = 'test2' where username = 'test';
 
-![cmd-6.png](attachment:cmd-6.png)
+![GITHUB](files/cmd-6.png)
 
 ### 要求四
 
 mysql> SELECT count(*) from member;
 
-![cmd-7.png](attachment:cmd-7.png)
+![GITHUB](files/cmd-7.png)
 
 mysql> SELECT sum(follower_count) from member;
 
-![cmd-8.png](attachment:cmd-8.png)
+![GITHUB](files/cmd-8.png)
 
 mysql> SELECT avg(follower_count) from member;
 
-![cmd-9.png](attachment:cmd-9.png)
+![GITHUB](files/cmd-9.png)
 
 ### 要求五
 
@@ -72,12 +72,12 @@ INSERT INTO message (member_id, content, like_count)<br>
 SELECT mess.content, mem.name from message mess inner join member mem on mess.member_id = mem.id;
 
 
-![cmd-10.png](attachment:cmd-10.png)
+![GITHUB](files/cmd-10.png)
 
 SELECT mess.content, mem.name from message mess inner join member mem on mess.member_id = mem.id where mem.username = 'test';
 
-![cmd-11.png](attachment:cmd-11.png)
+![GITHUB](files/cmd-11.png)
 
 SELECT avg(mess.like_count) from message mess inner join member mem on mess.member_id = mem.id where mem.username = 'test';
 
-![cmd-12.png](attachment:cmd-12.png)
+![GITHUB](files/cmd-12.png)
