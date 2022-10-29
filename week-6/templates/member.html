@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewpoint", content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8">
+        <title>WeHelp Week4 Member</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css')}}" >
+    </head>
+    <body>
+        <div class="head">
+            歡迎光臨，這是會員頁 
+            </span>
+        </div>
+        <div class="title">
+            <span>{{data}}</span>，歡迎登入系統 
+        </div>
+        <p class="sign-out"><a href="/signout" >登出系統</a></p>
+        <hr>
+        <div class="title">快來留言吧</div>
+        <form action="/message" class="form" method="POST">
+            內容 <input 
+            type="text" 
+            name="content"
+            />  <br> <br>
+            <button>送出</button>
+        </form>
+        <hr>
+        <table class="message">
+            {% for item in message %}
+            <tr>
+                <td>{{item[0]}}</td>
+                <td>：</td>
+                <td>{{item[1]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        
+    </body>
+    <script>
+
+    </script>    
+</html>
