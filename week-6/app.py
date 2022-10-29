@@ -3,7 +3,6 @@ import mysql.connector
 from functools import wraps
 app = Flask(__name__)
 app.secret_key="isSecret"
-SESSION_SERIALIZER = 'django.contrib.sessions.serializers' + '.PickleSerializer'
 
 db = mysql.connector.connect(
     host = "localhost",
