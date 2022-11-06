@@ -14,7 +14,7 @@ connection_pool = mysql.connector.pooling.MySQLConnectionPool(
     pool_reset_session = True,
     host = "127.0.0.1",
     user = "root",
-    password = "whitee*1117",
+    password = "",
     database = "website"
 )
 
