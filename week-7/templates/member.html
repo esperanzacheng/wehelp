@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewpoint", content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8">
+        <title>WeHelp Week4 Member</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css')}}" >
+    </head>
+    <body>
+        <div class="head">
+            歡迎光臨，這是會員頁 
+            </span>
+        </div>
+        <div class="title">
+            <span id="member-name">{{data}}</span>，歡迎登入系統 
+        </div>
+        <p class="sign-out"><a href="/signout" >登出系統</a></p>
+        <hr>
+
+        <div class="title">查詢會員姓名</div>
+        <form id="search-member" class="form">
+            <input 
+            type="text" 
+            name="username"
+            />
+            <button type="submit">查詢</button>
+        </form>
+        <br>
+        <div class="message" id="search-result"></div>
+
+        <div class="title">更新我的姓名</div>
+        <form id="update-name" class="form" method="POST" @method(`PATCH`)>
+            <input
+            type="text"
+            name="new-name"
+            placeholder="輸入新的姓名"
+            />
+            <button type="submit">更新</button>
+        </form>
+        <br>
+        <div class="message" id="update-result">更新成功</div>
+    </body>
+    <script>
+        const searchForm = document.getElementById("search-member");
+
+        searchForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            let user = searchForm[0].value;
+            let url = `/api/member?username=${user}`;
+            fetch(url, {
+                method: "GET",
+                headers:{
+                    "Content-Type": "application/json"
+                },
+            })
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                let searchResult = document.getElementById("search-result");
+                if (data["data"] == null) {                  
+                    searchResult.style.display = "none";                    
+                } else {
+                let name = data["data"]["name"];
+                let username = data["data"]["username"];
+                searchResult.textContent = name + " (" + username + ")";
+                searchResult.style.display = "block";
+                }   
+            })
+            .catch(err => console.log(err));
+        })
+        
+        const updateForm = document.getElementById("update-name");
+
+        updateForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            let newName = updateForm[0].value;
+            let url = `/api/member`;
+            fetch(url, {
+                method: "PATCH",
+                headers:{
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    "name": newName,
+                })
+            })
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                let updateResult = document.getElementById("update-result");
+                let updateName = document.getElementById("member-name");
+                if (data["ok"] == true) {
+                    updateResult.style.display ="block";
+                    updateName.textContent = newName;
+                } else {
+                    updateResult.style.display ="none";
+                }
+            })
+            .catch(err => console.log(err));
+        })
+
+    </script>    
+</html>
