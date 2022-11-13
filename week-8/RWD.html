@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewpoint", content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8">
+        <title>WeHelp Week3 ErinCheng</title>
+        <link rel="stylesheet" type="text/css" href="RWD.css" />
+    </head>
+    <body>
+        <div class="head">
+            <div class="homeLeft">My Website</div>
+            <div class="homeRight">
+                <div class="item">Item 1</div>
+                <div class="item">Item 2</div>
+                <div class="item">Item 3</div>
+                <div class="item">Item 4</div>
+            </div>
+            <div class="homeRight-mobile">
+                <img src="burger.png" width="30px" height="30px" />
+            </div>
+        </div>
+        <div class="welcome">Welcome to MyHome</div>
+        <div class="main-upper">
+            <div class="main-upper-sec" id="set0">
+            </div>    
+            <div class="main-upper-sec" id="set1">        
+            </div>
+        </div>
+        <div class="main-lower">
+            <div class="lower-set" id="set2">
+            </div>
+            <div class="lower-set" id="set3">
+            </div>
+            <div class="lower-set" id="set4">
+            </div>
+            <div class="lower-set" id="set5">
+            </div>
+        </div>
+        <div class="main-lower">
+            <div class="lower-set" id="set6">
+            </div>
+            <div class="lower-set" id="set7">
+            </div>
+            <div class="lower-set" id="set8">
+            </div>
+            <div class="lower-set" id="set9">
+            </div>
+        </div>    
+    </body>
+    <script>
+        let url = "https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json";
+        fetch(url)
+        .then(function(resp){
+            return resp.json();
+        })
+        .then(function(data){
+            alist = data["result"]["results"];      
+            for(let i = 0; i < 2; i++) {
+                const set = document.getElementById("set" + i.toString());
+                let newDiv = document.createElement("div");
+                newDiv.textContent = data["result"]["results"][i].stitle;
+                newDiv.classList.add("upper-word");
+                let newImg = document.createElement("img");
+                newImg.src = data["result"]["results"][i].file.split(/(jpg)/, 2).join("");
+                set.appendChild(newImg);
+                newImg.classList.add("upper-pic");
+                set.appendChild(newDiv);
+            }
+        });
+
+        fetch(url)
+        .then(function(resp){
+            return resp.json();
+        })
+        .then(function(data){
+            alist = data["result"]["results"];      
+            for(let i = 2; i < 10; i++) {
+                const set = document.getElementById("set" + i.toString());
+                let newDiv = document.createElement("div");
+                newDiv.textContent = data["result"]["results"][i].stitle;
+                newDiv.classList.add("lower-word");
+                let newImg = document.createElement("img");
+                newImg.src = data["result"]["results"][i].file.split(/(jpg)/, 2).join("");
+                set.appendChild(newImg);
+                newImg.classList.add("lower-pic");
+                set.appendChild(newDiv);
+            }
+        });
+
+
+    </script>    
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewpoint", content="width=device-width, initial-scale=1.0" />
+        <meta charset="utf-8">
+        <title>WeHelp Week4 Member</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css')}}" >
+    </head>
+    <body>
+        <div class="head">
+            歡迎光臨，這是會員頁 
+            </span>
+        </div>
+        <div class="title">
+            <span id="member-name">{{data}}</span>，歡迎登入系統 
+        </div>
+        <p class="sign-out"><a href="/signout" >登出系統</a></p>
+        <hr>
+
+        <div class="title">查詢會員姓名</div>
+        <form id="search-member" class="form">
+            <input 
+            type="text" 
+            name="username"
+            />
+            <button type="submit">查詢</button>
+        </form>
+        <br>
+        <div class="message" id="search-result"></div>
+        <div id="test"></div>
+
+    </body>
+    <script>
+        let url = "https://www.google.com/";
+        fetch(url)
+        .then(function(resp){
+            return resp.json();
+        })
+        // .then(function(data){
+        //     alist = data["result"]["results"];      
+        //     for(let i = 2; i < 10; i++) {
+        //         const set = document.getElementById("test");
+        //         let newDiv = document.createElement("div");
+        //         newDiv.textContent = data["result"]["results"][i].stitle;
+        //         newDiv.classList.add("lower-word");
+        //         let newImg = document.createElement("img");
+        //         newImg.src = data["result"]["results"][i].file.split(/(jpg)/, 2).join("");
+        //         set.appendChild(newImg);
+        //         newImg.classList.add("lower-pic");
+        //         set.appendChild(newDiv);
+        //     }
+        // });
+
+
+    </script>    
+</html>
